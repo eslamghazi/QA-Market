@@ -1,8 +1,8 @@
 For Browsing: -
 
-Admin: https://baraka-market-admin.vercel.app/
+Admin: https://qa-market-admin.vercel.app/
 
-User: https://baraka-market-user.vercel.app/
+User: https://qa-market-user.vercel.app/
 
 Api: https://fakestoreapi.com/
 
