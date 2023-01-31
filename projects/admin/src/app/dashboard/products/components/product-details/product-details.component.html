@@ -1,0 +1,19 @@
+<div class="box" >
+  <div class="row">
+    <div class="col-md-5 col-sm-12">
+    <img src="{{data.image}}" alt="">
+    </div>
+    <div class="col-md-7 col-sm-12">
+  <div class="info">
+    <ul class="list-unstyled" >
+      <li><strong>{{"productDetails.title"|translate}}  </strong>{{data.title}}</li>
+      <li><strong>{{"productDetails.category"|translate}}  </strong>{{data.category}}</li>
+      <li style="overflow: auto;height: 15vh;"><strong>{{"productDetails.description"|translate}}  </strong>{{data.description}}</li>
+      <li><strong>{{"productDetails.rate"|translate}}  </strong>{{data.rating?.rate}}</li>
+      <li><strong>{{"productDetails.count"|translate}}  </strong>{{data.rating?.count}}</li>
+      <li><strong>{{"productDetails.price"|translate}}  </strong>{{data.price}}</li>
+    </ul>
+  </div>
+  </div>
+</div>
+</div>

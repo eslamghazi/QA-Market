@@ -1,0 +1,31 @@
+<div class="box mt-5">
+
+    <div class="row align-items-end mb-2">
+
+      <div class="col my-2 w-25 ">
+        <app-select [data]="categories"  (selectedValue)="filterCategory($event)"></app-select>
+      </div>
+        <div class="col my-2 w-25">
+
+        <input (keyup)="page=$event" type="text" [ngClass]="{'rtl': langu=='ar'}" placeholder='{{"allProduct.search"|translate}}' class="form-control" [(ngModel)]="titleFilter.title">
+      </div>
+
+    </div>
+  <div class="row mb-2">
+    <div class="col-md-3 col-sm-12" *ngFor="let item of products |filterBy:titleFilter | paginate: { id: 'products',
+    itemsPerPage: 4,
+    currentPage: page,
+    totalItems: totalItems };   let index = index">
+
+ <app-product [data]="item" (item)="addToCart($event)"></app-product>
+
+    </div>
+
+    </div>
+    <h1 class="text-center mb-0" *ngIf="(products |filterBy: titleFilter).length === 0">{{"ngx-pagination.noResults"|translate}}</h1>
+    <div  class="d-flex justify-content-center mt-3">
+      <pagination-controls previousLabel='{{"ngx-pagination.previous"|translate}}' nextLabel='{{"ngx-pagination.next"|translate}}' (pageChange)="page=$event" id='products'></pagination-controls>
+    </div>
+
+</div>
+

@@ -1,0 +1,104 @@
+{
+  "login":{
+    "login":"تسجيل الدخول",
+    "email":"الإيميل",
+    "password":"الباسوورد",
+    "req":"يجب ملئ ذلك الحقل"
+
+
+    },
+
+  "carts":{
+    "startDate":"من تاريخ",
+    "endDate":"إلى تاريخ",
+    "apply":"تطبيق",
+    "date":"التاريخ",
+    "no":"الترتيب",
+    "dateSearch":"بحث بالتاريخ",
+    "quantity":"الكمية",
+    "actions":"إجراءات",
+    "delete":"حذف",
+    "view":"عرض",
+    "cartDetails":"تفاصيل العربة",
+    "name":"الاسم",
+    "price":"السعر",
+    "total":"المجموع",
+    "close":"إغلاق"
+
+  },
+  "navBar":{
+    "AllProducts":"جميع المنتجات",
+    "carts":"عربات التسوق",
+    "signOut":"تسجيل الخروج",
+    "users":"عرض المستخدمين"
+},
+
+"users":{
+  "addUser":"اضافة مستخدم",
+  "search":"بحث",
+  "name":"الاسم",
+  "email":"الإيميل",
+  "action":"اجراءات",
+  "updateUser":"تحديث المستخدم",
+  "deleteUser":"حذف المستخدم",
+  "username":"اسم المستخدم",
+  "password":"كلمة المرور"
+
+},
+  "product":{
+    "addProduct":"اضافة سلعة",
+    "updateProduct":"تحديث سلعة",
+    "search":"البحث",
+    "image":"صورة",
+    "title":"اسم",
+    "category":"صنف",
+    "price":"السعر",
+    "action":"اجراءات",
+    "delete":"حذف",
+    "description":"وصف"
+
+
+},
+"productDetails":{
+  "title":"الاسم ==>",
+  "category":"الصنف ==>",
+  "description":"الوصف ==>",
+  "rate":"التقييم ==>",
+  "count":"العدد ==>",
+  "price":"السعر ==>"
+
+},
+  "general":{
+          "loading":"...انـتـظـار"
+  },
+  "ngx-pagination":{
+   "previous":"السابق",
+   "next":"التالى",
+   "noResults":"لا توجد نتائج للبحث"
+
+  },
+  "toaster":{
+    "deleteCart":"تم حذف السلة بنجاح",
+    "deleteProduct":"تم حذف المنتج بنجاح",
+    "addProduct":"تم إضافة المنتج بنجاح",
+    "updateProduct":"تم تحديث المنتج بنجاح",
+    "addUser":"تم اضافة المستخدم بنجاح",
+    "deleteUser":"تم حذف المستخدم بنجاح",
+    "updateUser":"تم تحديث المستخدم بنجاح",
+
+
+    "loginSucs":"تم تسجيل الدخول بنجاح",
+    "error":"حدث خطأ ما",
+    "notAuth":"حدث خطأ ما ، حاول تسجيل الدخول",
+    "jwtEx":"انتهت الجلسة",
+    "jwtMus":"يجب تسجيل الدخول"
+
+  },
+  "currency":{
+    "le":"جنية"
+    },
+    "select":{
+  "categories":"الأصناف",
+  "all":"جميع الأصناف"
+    }
+}

@@ -1,0 +1,19 @@
+<div class="item" >
+  <img routerLink="/product/{{data.id}}" src="{{data.image}}" alt="">
+  <div class="body">
+    <h4 routerLink="/product/{{data.id}}">{{data.title}}</h4>
+    <p>{{data.description}}</p>
+  </div>
+  <div class="px-3 mb-4 justify-content-between align-items-center">
+  <button class="btn btn-success" *ngIf="!addButton" (click)="addButton = true">{{"product.addToCart"|translate}}</button>
+  <div class="d-flex" *ngIf="addButton">
+    <button class="btn btn-dark" (click)="plusAmount()">+</button>
+    <input readonly style="width: 50%;" type="number" class="form-control" value="1" min="1"  [(ngModel)]="amount">
+    <button class="btn btn-dark mr-2" (click)="minsAmount()">-</button>
+
+    <button  class="btn btn-danger " (click)="add();addButton = false">{{"product.add"|translate}}</button>
+  </div>
+  <div style="width:fit-content" class="span mt-2">{{data.price}} {{"currency.le"|translate}}</div>
+  </div>
+
+  </div>

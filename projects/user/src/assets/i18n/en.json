@@ -1,0 +1,111 @@
+{
+"login":{
+    "login":"login",
+    "registerNow":"Don't have an account? Register now",
+    "email":"email",
+    "password":"password",
+    "req":"Required"
+},
+"register":{
+  "reg":"Register",
+  "username":"Username",
+  "email":"Email",
+  "password":"Password",
+  "confPassword":"Confirm Password",
+  "notMatched":"Not Matched",
+  "createAcc":"Create Account",
+  "haveAcc":"You have an Account ?",
+  "req":"Required"
+},
+
+  "cart":{
+    "cart":"Shopping Cart",
+    "have":"You Have",
+    "itemIn":"Item in your cart",
+    "clear":"Clear Shopping Cart",
+    "name":"Name",
+    "price":"Price",
+    "quantity":"Quantity",
+    "total":"Total:",
+    "delete":"Delete",
+    "order":"Order Now",
+    "wellDone":"Well done!",
+    "orderSent":"Your Order is successfully sent!",
+    "search":"Search"
+
+
+  },
+  "navBar":{
+    "AllProducts":"All Products",
+    "cart":"Cart",
+    "signOut":"Sign Out"
+
+  },
+  "users":{
+    "addUser":"Add Users",
+    "search":"Search",
+    "name":"Name",
+    "email":"Email",
+    "action":"Actions",
+    "updateUser":"Update",
+    "deleteUser":"Delete",
+    "username":"Username",
+    "password":"Password"
+
+  },
+  "product":{
+    "addToCart":"Add to cart",
+    "add":"Add"
+
+},
+
+"allProduct":{
+  "search":"Search"
+
+},
+"productDetails":{
+  "title":"Title :",
+  "category":"Category :",
+  "description":"Description :",
+  "rate":"Rate :",
+  "count":"Count :",
+  "price":"Price :"
+
+},
+
+  "general":{
+    "loading":"Loading..."
+  },
+  "ngx-pagination":{
+   "previous":"Previous",
+   "next":"Next",
+   "noResults":"No Matching Results"
+  },
+  "toaster":{
+    "loginSucs":"Login Successfully",
+    "registernSucs":"Register Successfully",
+    "deleteCart":"This cart is successfully Deleted",
+    "deleteProduct":"This product is successfully Deleted",
+    "exceedCount":"No more quantity is available for this product ",
+    "addProduct":"This product is successfully Added",
+    "updateProduct":"This product is successfully Updated",
+    "addUser":"This user is successfully Added",
+    "deleteUser":"This user is successfully deleted",
+    "updateUser":"This user is successfully updated",
+    "sendCart":"Your cart is successfully sent",
+    "alreadyExist":"This Item is already exist",
+
+    "error":"Something went wrong",
+    "notAuth":"Something went wrong , Try Signning in again",
+    "jwtEx":"Session Expired",
+    "jwtMus":"You Should Sign in"
+
+  },
+  "currency":{
+  "le":"L.E"
+  },
+  "select":{
+    "categories":"Categories",
+    "all":"All Categories"
+  }
+}

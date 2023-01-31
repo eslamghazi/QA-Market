@@ -1,0 +1,6 @@
+
+  <label for="" class="my-1">{{"select.categories"|translate}}</label>
+<select class="form-control" (change)="dataChanges($event)">
+<option value="all" selected>{{"select.all"|translate}}</option>
+<option value="{{category}}" *ngFor="let category of data" >{{category}}</option>
+</select>

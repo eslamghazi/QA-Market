@@ -1,0 +1,51 @@
+<!-- <nav [ngClass]="{'rtl': lang=='ar'}" class="navbar navbar-expand-lg navbar-light ">
+  <div class="container">
+    <div class="content">
+      <h2 class="logo">Market</h2>
+
+      <ul>
+        <li routerLink="/products">Products</li>
+        <li routerLink="/cart">cart</li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div> -->
+<nav [ngClass]="{'rtl': lang=='ar'}" class="navbar navbar-expand-lg navbar-light ">
+  <div class="container ">
+    <div class="navbar-brand" >
+      <img src="../../../assets/logo-no-background.png" alt="">
+    </div>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto flex">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/products" routerLinkActive="active">{{"navBar.AllProducts"|translate}} <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/cart" routerLinkActive="active">{{"navBar.cart"|translate}} <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+     <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+      <a class="nav-link" (click)="signOut()" routerLink="/login"> {{"navBar.signOut"|translate}} </a>
+    </li>
+      <!-- <a class="nav-link"  (click)="changeLanguage()"> {{lang== 'en' ? "عـربـي" : "English"}} </a> -->
+      <li class="nav-item active">
+      <a class="nav-link"  role="button" *ngIf="lang=='ar'" (click)="changeLanguage('en')"> English </a>
+    </li>
+      <li class="nav-item active">
+      <a class="nav-link" role="button"  *ngIf="lang=='en'" (click)="changeLanguage('ar')"> عربي </a>
+    </li>
+     </ul>
+    </div>
+  </div>
+
+</nav>
+<div style="max-width:fit-content;" class="container">
+  <router-outlet></router-outlet>
+</div>

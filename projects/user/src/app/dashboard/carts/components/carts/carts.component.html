@@ -1,0 +1,63 @@
+<div class="cartBox">
+  <h1 class="text-danger">{{"cart.cart"|translate}}</h1>
+<div class="headCart mb-2">
+  <p class="lead">{{"cart.have"|translate}} <label class="text-danger">{{cartproducts.length}}</label> {{"cart.itemIn"|translate}} </p>
+
+
+    <input style="width: auto;"  (keyup)="page=$event" type="text" [ngClass]="{'rtl': langu=='ar'}" placeholder='{{"cart.search"|translate}}' class="form-control mr-2 ml-2" [(ngModel)]="titleFilter.item.title">
+
+<span class="text-danger card-header" (click)="clearCart()">{{"cart.clear"|translate}}</span>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>{{"cart.name"|translate}}</th>
+      <th>{{"cart.price"|translate}}</th>
+      <th style="width: 25%;">{{"cart.quantity"|translate}}</th>
+      <th>{{"cart.total"|translate}}</th>
+      <th></th>
+    </tr>
+  </thead>
+
+<tbody>
+  <tr *ngFor="let item of cartproducts |filterBy:titleFilter | paginate: { id: 'carts',
+  itemsPerPage: 3,
+  currentPage: page,
+  totalItems: totalItems };   let index = index">
+    <td><img src="{{item.item.image}}" alt=""></td>
+    <td>{{item.item.title}}</td>
+    <td>{{item.item.price.toFixed(2)}} {{"currency.le"|translate}}</td>
+    <td>
+      <div class="quantity">
+        <button class="btn btn-dark" (click)="plusAmount(index)">+</button>
+        <input readonly  style="width: 15vw" class="form-control" (change)="detectAmount()" type="number" min="1" [(ngModel)]="item.quantity">
+        <button class="btn btn-dark" (click)="minsAmount(index)">-</button>
+      </div>
+    </td>
+    <td >{{(item.item.price * item.quantity).toFixed(2)}} {{"currency.le"|translate}}</td>
+    <td>
+      <button class="btn btn-danger" (click)="deleteProduct(index)">{{"cart.delete"|translate}}</button>
+    </td>
+  </tr>
+</tbody>
+<tfoot >
+  <tr >
+    <th></th>
+    <th></th>
+    <th></th>
+    <th ></th>
+    <th *ngIf="cartproducts.length > 0">{{"cart.total"|translate}} <br> {{total.toFixed(2)}} {{"currency.le"|translate}}</th>
+
+    <th ><button (click)="creatCart()"  *ngIf="cartproducts.length > 0" class="btn btn-success">{{"cart.order"|translate}}</button></th>
+
+  </tr>
+</tfoot>
+</table>
+<h1 class="text-center mb-0" *ngIf="(cartproducts |filterBy: titleFilter).length === 0">{{"ngx-pagination.noResults"|translate}}</h1>
+<div  class="d-flex justify-content-center mt-3">
+  <pagination-controls previousLabel='{{"ngx-pagination.previous"|translate}}' nextLabel='{{"ngx-pagination.next"|translate}}' (pageChange)="page=$event" id='carts'></pagination-controls>
+</div>
+<div class="alert alert-success" *ngIf="success" role="alert"><strong> {{"cart.wellDone"|translate}} </strong> {{"cart.orderSent"|translate}} </div>
+
+</div>

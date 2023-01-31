@@ -1,0 +1,100 @@
+{
+"login":{
+    "login":"login",
+    "email":"email",
+    "password":"password",
+    "req":"Required"
+},
+
+  "carts":{
+    "startDate":"From Date",
+    "endDate":"To Date",
+    "apply":"Apply",
+    "no":"NO.",
+    "date":"Date",
+    "dateSearch":"Search Date",
+    "quantity":"Quantity",
+    "actions":"Actions",
+    "delete":"Delete",
+    "view":"View",
+    "cartDetails":"Cart Details",
+    "name":"Name",
+    "price":"Price",
+    "total":"Total",
+    "close":"Close"
+
+  },
+  "navBar":{
+    "AllProducts":"All Products",
+    "carts":"Carts",
+    "signOut":"Sign Out",
+    "users":"Users"
+  },
+  "users":{
+    "addUser":"Add Users",
+    "search":"Search",
+    "name":"Name",
+    "email":"Email",
+    "action":"Actions",
+    "updateUser":"Update",
+    "deleteUser":"Delete",
+    "username":"Username",
+    "password":"Password"
+
+  },
+  "product":{
+    "addProduct":"Add Product",
+    "updateProduct":"Update Product",
+    "search":"Search",
+    "image":"Image",
+    "title":"Title",
+    "category":"Category",
+    "price":"Price",
+    "action":"Action",
+    "delete":"Delete",
+    "description":"Description"
+
+},
+"productDetails":{
+  "title":"Title :",
+  "category":"Category :",
+  "description":"Description :",
+  "rate":"Rate :",
+  "count":"Count :",
+  "price":"Price :"
+
+},
+
+  "general":{
+    "loading":"Loading..."
+  },
+  "ngx-pagination":{
+   "previous":"Previous",
+   "next":"Next",
+   "noResults":"No Matching Results"
+  },
+  "toaster":{
+    "deleteCart":"This cart is successfully Deleted",
+    "deleteProduct":"This product is successfully Deleted",
+    "addProduct":"This product is successfully Added",
+    "updateProduct":"This product is successfully Updated",
+    "addUser":"This user is successfully Added",
+    "deleteUser":"This user is successfully deleted",
+    "updateUser":"This user is successfully updated",
+
+
+    "loginSucs":"Login Successfully",
+    "error":"Something went wrong",
+    "notAuth":"Something went wrong , Try Signning in again",
+    "jwtEx":"Session Expired",
+    "jwtMus":"You Should Sign in"
+
+  },
+  "currency":{
+  "le":"L.E"
+  },
+  "select":{
+    "categories":"Categories",
+    "all":"All Categories"
+  }
+}

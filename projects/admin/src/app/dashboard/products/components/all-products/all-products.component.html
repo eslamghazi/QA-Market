@@ -1,0 +1,122 @@
+<div class="cartBox">
+
+
+
+  <div class="row align-items-center">
+
+    <div class="col my-2 w-25 ">
+      <button class="btn btn-success my-2 form-control"  data-toggle="modal" (click)="add()" data-target="#viewCart">{{"product.addProduct"|translate}}</button>
+    </div>
+      <div class="col my-2 w-25">
+      <input (keyup)="page=$event" type="text" [ngClass]="{'rtl': langu=='ar'}" placeholder='{{"product.search"|translate}}' class="form-control" [(ngModel)]="titleFilter.title">
+    </div>
+
+  </div>
+
+
+
+  <!-- <h1 class="text-danger">Shopping Cart</h1> -->
+  <!-- <div class="headCart">
+    <p class="lead">You have <label class="text-danger">{{cartproducts.length}}</label> item in your cart</p>
+    <span class="text-danger card-header" (click)="clearCart()">Clear Shopping Cart</span>
+  </div> -->
+  <table class="table table-striped">
+  <thead class="text-center">
+    <tr>
+      <!-- <th>Name</th> -->
+      <!-- <th>Price</th> -->
+      <th>{{"product.image"|translate}}</th>
+      <!-- <th style="width: 25%;">Quantity</th> -->
+      <th>{{"product.title"|translate}}</th>
+      <th>{{"product.category"|translate}}</th>
+      <th>{{"product.price"|translate}}</th>
+      <th>{{"product.action"|translate}}</th>
+    </tr>
+  </thead>
+
+<tbody>
+  <tr  *ngFor="let item of products |filterBy:titleFilter | paginate: { id: 'Allproducts',
+  itemsPerPage: 5,
+  currentPage: page,
+  totalItems: totalItems };   let index = index">
+    <td routerLink="/product/{{item.id}}"><img  src="{{item.image}}" alt=""></td>
+    <td >{{item.title}}</td>
+    <td>{{item.category}}</td>
+    <td>{{item.price}} {{"currency.le"|translate}}</td>
+    <td class="d-flex"><button class="btn btn-warning mr-2 " data-toggle="modal" data-target="#viewCart" (click)="update(item)">{{"product.updateProduct"|translate}}</button>
+    <button class="btn btn-danger"  (click)="delete(item)">{{"product.delete"|translate}}</button></td>
+    <!-- <td>{{item.date | date:"medium"}}</td> -->
+
+      <!-- {{item.products.length}} -->
+      <!-- <div class="quantity">
+        <button class="btn btn-dark" (click)="plusAmount(index)">+</button>
+        <input class="form-control" (change)="detectAmount()" type="number" min="" [(ngModel)]="item.quantity">
+        <button class="btn btn-dark" (click)="minsAmount(index)">-</button>
+      </div> -->
+
+    <!-- <td>{{(item.item.price * item.quantity).toFixed(2)}} L.E</td> -->
+
+  </tr>
+</tbody>
+<!-- <tfoot>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th >Total : {{total.toFixed(2)}} L.E</th>
+    <th><button (click)="creatCart()"  class="btn btn-success">Order Now</button></th>
+  </tr>
+</tfoot> -->
+</table>
+
+<h1 class="text-center mb-0" *ngIf="(products |filterBy: titleFilter).length === 0">{{"ngx-pagination.noResults"|translate}}</h1>
+    <div  class="d-flex justify-content-center mt-3">
+      <pagination-controls class="d-flex" previousLabel='{{"ngx-pagination.previous"|translate}}' nextLabel='{{"ngx-pagination.next"|translate}}' (pageChange)="page=$event" id='Allproducts'></pagination-controls>
+    </div>
+</div>
+
+<div class="modal fade" id="viewCart"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" style="max-width:900px!important">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="font-size:x-large;" class="modal-title" id="exampleModalLabel">{{"product.addProduct"|translate}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<form  [formGroup]="form">
+  <div class="row" >
+    <div class="col-md-4 col-sm-12" >
+<label for="">{{"product.title"|translate}}</label>
+<input formControlName="title" type="text" class="form-control" placeholder="title">
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <label for="">{{"product.price"|translate}}</label>
+      <input formControlName="price" type="number" class="form-control" placeholder="price">
+      </div>
+    <div class="col-md-4 col-sm-12">
+      <app-select  [data]="categories"  (selectedValue)="getSelectedCategory($event)" [all]=false [select]="form.value.category"></app-select>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <label for="image">{{"product.image"|translate}}</label>
+        <img  id="image" src="{{base64}}" alt="">
+        <input  type="file" class="form-control" (change)="getImagePath($event)">
+        </div>
+      <div class="col-md-4 col-sm-12">
+        <label for="">{{"product.description"|translate}}</label>
+        <textarea formControlName="description"  class="form-control" placeholder="Type here ..."></textarea>
+        </div>
+  </div>
+  <div class="d-flex justify-content-end mt-3">
+<button class="btn btn-success" [disabled]="!form.valid" *ngIf="!item" data-dismiss="modal" (click)="addProduct()">{{"product.addProduct"|translate}}</button>
+<button class="btn btn-success" [disabled]="!form.valid" *ngIf="item" data-dismiss="modal" (click)="updateProduct()">{{"product.updateProduct"|translate}}</button>
+</div>
+</form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
