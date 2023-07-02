@@ -2,7 +2,13 @@ For Browsing: -
 
 Admin: https://qa-market-admin.vercel.app/
 
+username:admin@admin.com
+password:12345
+
 User: https://qa-market-user.vercel.app/
+
+username:user@user.com
+password:12345
 
 Api: https://fakestoreapi.com/
 
